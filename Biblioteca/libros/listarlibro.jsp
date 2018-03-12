@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ 	page import="biblioteca.*"%>
 <%@		page import="java.util.ArrayList"%>
 <%@		page import="java.util.Iterator"%>
@@ -8,16 +8,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-<%
-ModeloLibro ml = new ModeloLibro();
-ArrayList<Libro> libros = ml.selectAll();
-Iterator<Libro> i = libros.iterator();
-Libro libro = new Libro();
-while(i.hasNext()){
-	out.print("<tr><td>" +libro.getTitulo()+ "</tr></td");
-}
-%>
+	<%
+		ModeloLibro ml = new ModeloLibro();
+		int id = Integer.parseInt(request.getParameter("id"));
+		Libro libro = ml.selectId(id);
+		out.print(libro.getTitulo());
+	%>
 </body>
 </html>

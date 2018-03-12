@@ -9,6 +9,8 @@ public class Main {
 		//vista2.menuLibro();
 		PrestamosVista vista3 = new PrestamosVista();
 		vista3.menuPrestamo();
+		
+	
 	}
 
 }
